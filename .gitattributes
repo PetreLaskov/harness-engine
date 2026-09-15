@@ -1,0 +1,3 @@
+* text eol=lf
+/demo/lint-harness.cjs -text
+/demo/fixtures.json -text

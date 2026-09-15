@@ -1,0 +1,59 @@
+{
+  "experiment": "Five synthetic packages exercising an existing structural checker; no Claude runtime executed.",
+  "node_version": "v22.16.0",
+  "checker_sha256": "4279e07cc342724cf66dc2eb0cafad44e2dad4d97c339d76f38f8a1311e14a2d",
+  "fixtures_sha256": "a7b6cf0840ede3b8df7e64bec4e32292ac09f7a3c55eb7c5974cf8d7219128ad",
+  "summary": {
+    "packages": 5,
+    "failed_packages": 3,
+    "warning_only_packages": 1,
+    "clean_packages": 1
+  },
+  "packages": [
+    {
+      "name": "clean",
+      "exit_code": 0,
+      "failures": 0,
+      "warnings": 0,
+      "info": 0,
+      "stdout": "0 FAIL, 0 WARN, 0 INFO",
+      "stderr": ""
+    },
+    {
+      "name": "root-manifest",
+      "exit_code": 1,
+      "failures": 1,
+      "warnings": 0,
+      "info": 0,
+      "stdout": "FAIL  plugin.json — manifest at harness root is not discovered — must live at .claude-plugin/plugin.json\n\n1 FAIL, 0 WARN, 0 INFO",
+      "stderr": ""
+    },
+    {
+      "name": "missing-metadata",
+      "exit_code": 1,
+      "failures": 1,
+      "warnings": 0,
+      "info": 0,
+      "stdout": "FAIL  agents/reviewer.md — agent missing frontmatter name/description\n\n1 FAIL, 0 WARN, 0 INFO",
+      "stderr": ""
+    },
+    {
+      "name": "broken-reference",
+      "exit_code": 1,
+      "failures": 1,
+      "warnings": 0,
+      "info": 0,
+      "stdout": "FAIL  CLAUDE.md — dangling reference: state/missing.md\n\n1 FAIL, 0 WARN, 0 INFO",
+      "stderr": ""
+    },
+    {
+      "name": "nested-agent",
+      "exit_code": 0,
+      "failures": 0,
+      "warnings": 1,
+      "info": 0,
+      "stdout": "WARN  agents/reviewer/AGENT.md — AGENT.md-in-directory is non-canonical — use flat agents/{name}.md\n\n0 FAIL, 1 WARN, 0 INFO",
+      "stderr": ""
+    }
+  ]
+}

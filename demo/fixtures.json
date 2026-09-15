@@ -1,0 +1,25 @@
+{
+  "clean": {
+    "CLAUDE.md": "# Example workspace\nUse the supplied references for the task.\n",
+    ".claude-plugin/plugin.json": "{\"name\":\"example-workspace\",\"version\":\"1.0.0\"}\n",
+    "agents/reviewer.md": "---\nname: reviewer\ndescription: Review a supplied document for unanswered questions.\n---\nIdentify unanswered questions in the supplied document.\n"
+  },
+  "root-manifest": {
+    "CLAUDE.md": "# Example workspace\nUse the supplied references for the task.\n",
+    "plugin.json": "{\"name\":\"example-workspace\",\"version\":\"1.0.0\"}\n"
+  },
+  "missing-metadata": {
+    "CLAUDE.md": "# Example workspace\nUse the supplied references for the task.\n",
+    ".claude-plugin/plugin.json": "{\"name\":\"example-workspace\",\"version\":\"1.0.0\"}\n",
+    "agents/reviewer.md": "# Reviewer\nIdentify unanswered questions in the supplied document.\n"
+  },
+  "broken-reference": {
+    "CLAUDE.md": "# Example workspace\nRead state/missing.md before starting.\n",
+    ".claude-plugin/plugin.json": "{\"name\":\"example-workspace\",\"version\":\"1.0.0\"}\n"
+  },
+  "nested-agent": {
+    "CLAUDE.md": "# Example workspace\nUse the supplied references for the task.\n",
+    ".claude-plugin/plugin.json": "{\"name\":\"example-workspace\",\"version\":\"1.0.0\"}\n",
+    "agents/reviewer/AGENT.md": "---\nname: reviewer\ndescription: Review a supplied document for unanswered questions.\n---\nIdentify unanswered questions in the supplied document.\n"
+  }
+}
